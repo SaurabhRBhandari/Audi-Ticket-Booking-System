@@ -12,17 +12,20 @@ public class Booking {
     private boolean isCancelled;
 
     public Booking(Event e, List<Auditorium.Seat> seats) throws Exception {
-        this.bookingID=null;
-        if(!Auditorium.getEvents().contains(e))throw new Exception("Event does not exist.");
-        for(Auditorium.Seat i:seats)
-        {
-            if(i.getIsBooked(e))throw new Exception("Reserved!");
-        }
-        this.e=e;
-        this.seats=seats;
-        for(Auditorium.Seat i:seats)
-        {
-            i.book(e);
+        //Synchronizing booking to prevent multiple threads from booking the same seats
+        sychronized(this){
+            this.bookingID=null;
+            if(!Auditorium.getEvents().contains(e))throw new Exception("Event does not exist.");
+            for(Auditorium.Seat i:seats)
+            {
+                if(i.getIsBooked(e))throw new Exception("Reserved!");
+            }
+            this.e=e;
+            this.seats=seats;
+            for(Auditorium.Seat i:seats)
+            {
+                i.book(e);
+            }
         }
     }
 
