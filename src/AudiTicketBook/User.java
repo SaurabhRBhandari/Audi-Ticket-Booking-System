@@ -13,16 +13,19 @@ public class User {
 
     protected String name;
 
+    private boolean is_verified;
+
     public User(String userID, String password, String name)
     {
         this.userID=userID;
         this.password=password;
         this.name=name;
+        this.is_verified=false;
     }
 
     public boolean verify(String pass) throws WrongPasswordException
     {
-        if(pass.equals(password)) return true;
+        if(pass.equals(password)){this.is_verified=true; return true;}
         throw new WrongPasswordException("Incorrect UserName / Password");
     }
 

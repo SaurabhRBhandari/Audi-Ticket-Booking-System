@@ -13,6 +13,7 @@ public class Booking {
 
     public Booking(Event e, List<Auditorium.Seat> seats) throws Exception {
         this.bookingID=null;
+        if(!Auditorium.getEvents().contains(e))throw new Exception("Event does not exist.");
         for(Auditorium.Seat i:seats)
         {
             if(i.getIsBooked(e))throw new Exception("Reserved!");
@@ -27,7 +28,7 @@ public class Booking {
 
     public boolean getStatus()
     {
-        return !isCancelled;
+        return Auditorium.getEvents().contains(e);
     }
 
     public void cancel()

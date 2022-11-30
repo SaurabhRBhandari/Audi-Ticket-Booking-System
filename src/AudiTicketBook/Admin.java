@@ -9,7 +9,12 @@ public class Admin extends User{
 
     public void addEvent(Event e)
     {
+        Auditorium.addEvent(this,e);
+    }
 
+    public void removeEvent(Event e)
+    {
+        Auditorium.removeEvent(this,e);
     }
 
 }

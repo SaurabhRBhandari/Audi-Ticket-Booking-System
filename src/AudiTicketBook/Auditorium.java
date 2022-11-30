@@ -18,10 +18,10 @@ public class Auditorium {
             is_booked.add(e);
         }
     }
-    private Seat matrix[];
+    private static Seat matrix[];
 
-    int n;
-    private List<Event> events;
+    static int n;
+    private static List<Event> events;
     public Auditorium(int n)
     {
         matrix=new Seat[n];
@@ -33,26 +33,26 @@ public class Auditorium {
         events=new ArrayList<>();
     }
 
-    public Seat[] getMatrix() {
+    public static Seat[] getMatrix() {
         return matrix;
     }
 
-    public List<Event> getEvents()
+    public static List<Event> getEvents()
     {
         return events;
     }
 
-    public void addEvent(User u,Event e) throws IllegalAccessException {
-        if(!(u instanceof Admin))throw new IllegalAccessException(" You are not authorized to add new Event");
+    public static void addEvent(User u,Event e) throws RuntimeException {
+        if(!(u instanceof Admin))throw new RuntimeException(" You are not authorized to add new Event");
         events.add(e);
     }
 
-    public void removeEvent(User u,Event e) throws IllegalAccessException {
-        if(!(u instanceof Admin))throw new IllegalAccessException(" You are not authorized to add new Event");
+    public static void removeEvent(User u,Event e) throws RuntimeException {
+        if(!(u instanceof Admin))throw new RuntimeException(" You are not authorized to remove an event");
         events.remove(e);
     }
 
-    public int getRevenue(Event e)
+    public static int getRevenue(Event e)
     {
         int ans=0;
         for(int i=0;i<n;i++)
