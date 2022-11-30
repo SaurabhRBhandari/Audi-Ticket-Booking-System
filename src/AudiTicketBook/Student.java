@@ -3,7 +3,7 @@ package AudiTicketBook;
 import java.util.*;
 
 public class Student extends User implements Runnable{
-    Thread t.
+    Thread t;
     private final String collegeID;
     private List<Booking> bookings;
 
@@ -20,7 +20,7 @@ public class Student extends User implements Runnable{
     {
         return bookings;
     }
-    public void run(){};
+    public void run(){}
     public void book(Event E,List<Auditorium.Seat> seats)
     {
         try
