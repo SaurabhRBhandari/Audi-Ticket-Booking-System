@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62b27a8d-c7b9-4927-9eb6-738cd2deb0cd" name="Changes" comment="Initial Commit">
+    <list default="true" id="62b27a8d-c7b9-4927-9eb6-738cd2deb0cd" name="Changes" comment="Added admin functionality">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AudiTicketBooking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AudiTicketBooking.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,13 +39,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,8 +76,18 @@
       <option name="project" value="LOCAL" />
       <updated>1669797522755</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added admin functionality">
+      <created>1669808108804</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669808108804</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.plantuml" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -80,6 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Added admin functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added admin functionality" />
   </component>
 </project>

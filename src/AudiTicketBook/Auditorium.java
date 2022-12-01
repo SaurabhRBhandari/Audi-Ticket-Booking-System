@@ -57,13 +57,20 @@ public class Auditorium {
         int ans=0;
         for(int i=0;i<n;i++)
         {
-            for(int j=0;j<n;j++)
-            {
                 if(matrix[i].getIsBooked(e))
                 {
                     ans+=e.getPrice();
                 }
-            }
+        }
+        return ans;
+    }
+
+    public static List<Seat> getAvailableSeats(Event e)
+    {
+        List<Seat> ans=new ArrayList<>();
+        for(Seat s: matrix)
+        {
+            if(!s.getIsBooked(e))ans.add(s);
         }
         return ans;
     }
