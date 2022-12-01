@@ -3,7 +3,8 @@ package AudiTicketBook;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student extends User {
+public class Student extends User implements Runnable{
+    Thread t;
     private final String collegeID;
     private final List<Booking> bookings;
 
@@ -11,13 +12,15 @@ public class Student extends User {
         super(password, name);
         this.collegeID = collegeID;
         this.bookings = new ArrayList<>();
+        t = new Thread(this);
+        t.start();
     }
-
+    public void run(){}
     public List<Booking> getBookings() {
         return bookings;
     }
 
-    public void book(Event E, List<Auditorium.Seat> seats) {
+    synchronized public void book(Event E, List<Auditorium.Seat> seats) {
         try {
             bookings.add(new Booking(E, seats));
         } catch (Exception e) {
