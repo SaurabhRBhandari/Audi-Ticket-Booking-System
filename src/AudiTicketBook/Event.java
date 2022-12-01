@@ -24,5 +24,5 @@ public class Event {
         return price;
     }
 
-
+    // setPrice()
 }
