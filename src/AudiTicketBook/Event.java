@@ -77,7 +77,7 @@ public class Event implements Savable {
     public String toString() {
         String tmp=is_cancelled?"1":"0";
         System.out.println(tmp);
-        return this.name+"$"+this.time+"$"+this.date+"$"+this.price+"$"+tmp;
+        return this.name+"$"+this.time+"$"+this.date+"$"+this.price+"$"+tmp+"\n";
     }
 
     public int getPrice() {

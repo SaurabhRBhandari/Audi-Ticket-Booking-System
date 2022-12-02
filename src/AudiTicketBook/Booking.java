@@ -8,13 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Booking implements Savable{
-    private final Event e;
-    private final List<Auditorium.Seat> seats;
+    private Event e;
+    private List<Auditorium.Seat> seats;
 
     private static List<Booking> bookingList;
 
     private boolean isCancelled;
-
     public static void readFromMemory() throws IOException {
         bookingList=new ArrayList<>();
         FileReader reader = new FileReader("data/BookingDetail.txt");
@@ -29,7 +28,7 @@ public class Booking implements Savable{
             for(int i=1;i< arr.length;i++)
             {
                 int seatid=Integer.parseInt(arr[i]);
-                Auditorium.Seat s=Auditorium.getMatrix()[i];
+                Auditorium.Seat s=Auditorium.getMatrix()[seatid];
                 s.book(e);
                 seats.add(s);
             }
@@ -92,7 +91,7 @@ public class Booking implements Savable{
             seatList+="$"+s.getId();
         }
         System.out.println(Event.getAllInstances());
-        return Event.getAllInstances().indexOf(e)+seatList;
+        return Event.getAllInstances().indexOf(e)+seatList+"\n";
 
     }
 }

@@ -104,6 +104,6 @@ public class Student extends User implements Savable {
         {
             bookingList+="$"+Booking.getAllInstances().indexOf(b);
         }
-        return name+"$"+userid+"$"+password+bookingList;
+        return name+"$"+userid+"$"+password+bookingList+"\n";
     }
 }

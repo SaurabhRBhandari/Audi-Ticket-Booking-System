@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad752a3-d53d-4d67-b868-dde0809c6c0a" name="Changes" comment="Savable.java added">
+    <list default="true" id="4ad752a3-d53d-4d67-b868-dde0809c6c0a" name="Changes" comment="minor bugs resolved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/BookingDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BookingDetail.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/EventDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/EventDetail.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/StudentDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/StudentDetail.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Add_Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Add_Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Admin_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/User_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/User_Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669978112539</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="minor bugs resolved">
+      <created>1669979189514</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669979189514</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +102,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Stores data" />
     <MESSAGE value="Savable.java added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Savable.java added" />
+    <MESSAGE value="minor bugs resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor bugs resolved" />
   </component>
 </project>
