@@ -8,12 +8,12 @@ public class Admin extends User implements Runnable{
         t.start();
     }
     public void run(){}
-    public static void addEvent(Event e) {
-        Auditorium.addEvent(e);
+    public static void addEvent(String name,String date,String time,int price) {
+        Event.newInstance(name,time,date,price);
     }
 
     public static void removeEvent(Event e) {
-        Auditorium.removeEvent(e);
+        e.cancel();
     }
     public static void changeDetails(Event ev,String name,String date,String time,int price)
     {

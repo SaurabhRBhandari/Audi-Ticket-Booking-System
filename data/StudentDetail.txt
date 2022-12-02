@@ -1,2 +1,1 @@
-user$user$user
-user$user1$123$0$1
+user$user$123$0$1

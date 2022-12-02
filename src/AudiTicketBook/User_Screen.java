@@ -73,12 +73,13 @@ public class User_Screen extends JFrame {
 			}
 		});
 		String[] Columns= {"Name","Date","Timing","Price"};
-		ev=Auditorium.getEvents();
+		ev=Event.getAllInstances();
 		
 		int n=ev.size();
 		String[][] Rows=new String[n][4];
 		for (int i=0;i<ev.size();i++)
 		{
+			if(!ev.get(i).getStatus())continue;
 			Rows[i][0]=ev.get(i).getName();
 
 			Rows[i][1]=ev.get(i).getDate();

@@ -138,8 +138,7 @@ String name,date,time,price;
 			Error.setText("Fields cannot be empty");
 			return;
 		}
-		Event e=Event.newInstance(name,time,date,Integer.parseInt(price));
-		Admin.addEvent(e);
+		Admin.addEvent(name,date,time,Integer.parseInt(price));
 		
 		Eventadd.setText("Event Added");
 	}

@@ -61,11 +61,15 @@ public class Booking implements Savable{
     {
         Booking b=new Booking(e,seats);
         bookingList.add(b);
+        for(Auditorium.Seat s:seats)
+        {
+            s.book(e);
+        }
         return b;
     }
 
     public boolean getStatus() {
-        return Auditorium.getEvents().contains(e);
+        return e.getStatus();
     }
 
     public void cancel() {

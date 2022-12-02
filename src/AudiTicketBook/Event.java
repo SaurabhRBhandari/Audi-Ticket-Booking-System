@@ -28,7 +28,7 @@ public class Event implements Savable {
 
     public boolean getStatus()
     {
-        return is_cancelled;
+        return !is_cancelled;
     }
     public static List<Event> getAllInstances()
     {
@@ -51,10 +51,6 @@ public class Event implements Savable {
             boolean is_cancelled=arr[4].equals("1");
             Event e=new Event(name,time,date,price);
             if(is_cancelled)e.cancel();
-            else {
-                System.out.println("here");
-                Auditorium.addEvent(e);
-            }
             eventList.add(new Event(name,time,date,price));
         }
         reader.close();

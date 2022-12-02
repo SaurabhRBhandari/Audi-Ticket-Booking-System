@@ -27,8 +27,6 @@ public class Auditorium{
     private static Seat matrix[];
 
     private static final int N=100;
-    private static List<Event> events;
-
 
     public Auditorium()
     {
@@ -38,7 +36,6 @@ public class Auditorium{
         {
             matrix[i]=new Seat(i);
         }
-        events=new ArrayList<>();
 
     }
 
@@ -46,19 +43,7 @@ public class Auditorium{
         return matrix;
     }
 
-    public static List<Event> getEvents()
-    {
-        return events;
-    }
 
-    public static void addEvent(Event e){
-        events.add(e);
-    }
-
-    public static void removeEvent(Event e) {
-        events.remove(e);
-        e.cancel();
-    }
 
     public static int getRevenue(Event e)
     {

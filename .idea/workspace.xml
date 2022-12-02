@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad752a3-d53d-4d67-b868-dde0809c6c0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ATB.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Add_Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin_Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Change_Details.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Landing_Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Log_in.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Movie_Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Previous_Bookings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Register_Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AudiTicketBook/User_Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="4ad752a3-d53d-4d67-b868-dde0809c6c0a" name="Changes" comment="Savable.java added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/BookingDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BookingDetail.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/EventDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/EventDetail.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/StudentDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/StudentDetail.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Add_Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Add_Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Admin_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin_Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/User_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/User_Screen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -49,14 +43,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/ADMIN/Documents/ATB",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ADMIN/Documents/ATB&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\Documents\ATB" />
@@ -74,6 +68,21 @@
       <option name="presentableId" value="Default" />
       <updated>1669925402462</updated>
     </task>
+    <task id="LOCAL-00001" summary="Stores data">
+      <created>1669933983885</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669933983885</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Savable.java added">
+      <created>1669978112539</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669978112539</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,5 +95,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Stores data" />
+    <MESSAGE value="Savable.java added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Savable.java added" />
   </component>
 </project>
