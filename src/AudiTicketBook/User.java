@@ -1,8 +1,5 @@
 package AudiTicketBook;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
 class WrongPasswordException extends Exception {
     public WrongPasswordException(String s) {
         super(s);
@@ -15,7 +12,7 @@ public class User {
 
     private boolean is_verified;
 
-    public User( String userid, String password) {
+    public User(String userid, String password) {
         this.password = password;
         this.userid = userid;
         this.is_verified = false;
@@ -32,7 +29,6 @@ public class User {
     public String getName() {
         return null;
     }
-
 
 
 }
