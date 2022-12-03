@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Movie_Booking extends JFrame {
+public class EventBooking extends JFrame {
 
     private final JPanel contentPane;
     private final Student user;
@@ -39,7 +39,7 @@ public class Movie_Booking extends JFrame {
     /**
      * Create the frame.
      */
-    public Movie_Booking(Event ev, Student s) {
+    public EventBooking(Event ev, Student s) {
         checkbox = new ArrayList<JCheckBox>();
         e = ev;
         user = s;
@@ -149,7 +149,7 @@ public class Movie_Booking extends JFrame {
     }
 
     private void User_Screen() {
-        User_Screen sc2 = new User_Screen(user);
+        UserScreen sc2 = new UserScreen(user);
         sc2.setVisible(true);
         this.dispose();
     }

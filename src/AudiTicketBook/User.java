@@ -1,11 +1,5 @@
 package AudiTicketBook;
 
-class WrongPasswordException extends Exception {
-    public WrongPasswordException(String s) {
-        super(s);
-    }
-}
-
 public class User {
     protected String password;
     protected String userid;

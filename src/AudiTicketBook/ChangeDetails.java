@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Change_Details extends JFrame {
+public class ChangeDetails extends JFrame {
 
     private final JPanel contentPane;
     private final JTextField NewName;
@@ -21,7 +21,7 @@ public class Change_Details extends JFrame {
     /**
      * Create the frame.
      */
-    public Change_Details(Event e) {
+    public ChangeDetails(Event e) {
         ev = e;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 540);
@@ -140,7 +140,7 @@ public class Change_Details extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Change_Details frame = new Change_Details(e);
+                    ChangeDetails frame = new ChangeDetails(e);
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -174,7 +174,7 @@ public class Change_Details extends JFrame {
 
         Admin.changeDetails(ev, name, date, time, pr);
 
-        Change_Details obj = new Change_Details(ev);
+        ChangeDetails obj = new ChangeDetails(ev);
         obj.setVisible(true);
         this.dispose();
 
@@ -182,7 +182,7 @@ public class Change_Details extends JFrame {
     }
 
     private void Admin() {
-        Admin_Screen sc = new Admin_Screen();
+        AdminScreen sc = new AdminScreen();
         sc.setVisible(true);
         this.dispose();
     }

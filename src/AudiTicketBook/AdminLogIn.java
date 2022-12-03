@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Admin_log_in extends JFrame {
+public class AdminLogIn extends JFrame {
 
     private final JPanel contentPane;
     private final JTextField textField;
@@ -16,7 +16,7 @@ public class Admin_log_in extends JFrame {
     /**
      * Create the frame.
      */
-    public Admin_log_in() {
+    public AdminLogIn() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 540);
         contentPane = new JPanel();
@@ -88,7 +88,7 @@ public class Admin_log_in extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Admin_log_in frame = new Admin_log_in();
+                    AdminLogIn frame = new AdminLogIn();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -105,7 +105,7 @@ public class Admin_log_in extends JFrame {
             return;
         }
         if (name.equals("admin") && pwd.equals("password")) {
-            Admin_Screen sc = new Admin_Screen();
+            AdminScreen sc = new AdminScreen();
             sc.setVisible(true);
             this.dispose();
         } else {
@@ -114,7 +114,7 @@ public class Admin_log_in extends JFrame {
     }
 
     private void back() {
-        Landing_Screen sc = new Landing_Screen();
+        LandingScreen sc = new LandingScreen();
         sc.setVisible(true);
         this.dispose();
     }

@@ -7,14 +7,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 
-public class Landing_Screen extends JFrame {
+public class LandingScreen extends JFrame {
 
     private final JPanel contentPane;
 
     /**
      * Create the frame.
      */
-    public Landing_Screen() {
+    public LandingScreen() {
         setResizable(false);
         setBackground(Color.WHITE);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,7 +76,7 @@ public class Landing_Screen extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Landing_Screen frame = new Landing_Screen();
+                    LandingScreen frame = new LandingScreen();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -99,19 +99,19 @@ public class Landing_Screen extends JFrame {
     }
 
     private void Log_Screen(MouseEvent E) {
-        Log_in screen2 = new Log_in();
+        LogIn screen2 = new LogIn();
         screen2.setVisible(true);
         this.dispose();
     }
 
     private void Register() {
-        Register_Screen sc = new Register_Screen();
+        RegisterScreen sc = new RegisterScreen();
         sc.setVisible(true);
         this.dispose();
     }
 
     private void Admin_Screen(MouseEvent E) {
-        Admin_log_in screen2 = new Admin_log_in();
+        AdminLogIn screen2 = new AdminLogIn();
         screen2.setVisible(true);
         this.dispose();
     }

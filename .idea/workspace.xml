@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad752a3-d53d-4d67-b868-dde0809c6c0a" name="Changes" comment="minor bugs resolved">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BookingDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BookingDetail.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/EventDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/EventDetail.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/StudentDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/StudentDetail.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Add_Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Add_Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Admin_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Admin_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Auditorium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Change_Details.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Change_Details.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Landing_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Landing_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Log_in.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Log_in.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Movie_Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Movie_Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Previous_Bookings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Previous_Bookings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Register_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Register_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Savable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Savable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/User_Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/User_Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="4ad752a3-d53d-4d67-b868-dde0809c6c0a" name="Changes" comment="minor bugs resolved" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="final-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

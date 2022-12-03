@@ -6,17 +6,18 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Log_in extends JFrame {
+public class RegisterScreen extends JFrame {
 
     private final JPanel contentPane;
     private final JTextField textField;
     private final JPasswordField passwordField;
     private final JLabel Error = new JLabel("");
+    private final JTextField Name_Student;
 
     /**
      * Create the frame.
      */
-    public Log_in() {
+    public RegisterScreen() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 540);
         contentPane = new JPanel();
@@ -26,9 +27,9 @@ public class Log_in extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JLabel lblNewLabel = new JLabel("Log In");
+        JLabel lblNewLabel = new JLabel("Register");
         lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 44));
-        lblNewLabel.setBounds(338, 82, 415, 55);
+        lblNewLabel.setBounds(308, 82, 415, 55);
         contentPane.add(lblNewLabel);
 
         textField = new JTextField();
@@ -50,31 +51,41 @@ public class Log_in extends JFrame {
         passwordField.setBounds(304, 360, 227, 20);
         contentPane.add(passwordField);
 
-        JButton btnNewButton = new JButton("Log In");
+        JButton btnNewButton = new JButton("Back");
         btnNewButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                log();
-            }
-        });
-        btnNewButton.setBounds(360, 431, 107, 23);
-        contentPane.add(btnNewButton);
-
-        JButton btnNewButton_1 = new JButton("Back");
-        btnNewButton_1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 Landing();
             }
         });
-        btnNewButton_1.setBounds(10, 467, 107, 23);
+        btnNewButton.setBounds(10, 467, 107, 23);
+        contentPane.add(btnNewButton);
+
+        JButton btnNewButton_1 = new JButton("Register");
+        btnNewButton_1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Registering();
+            }
+        });
+        btnNewButton_1.setBounds(354, 418, 107, 23);
         contentPane.add(btnNewButton_1);
 
 
         Error.setFont(new Font("Tahoma", Font.BOLD, 19));
         Error.setForeground(new Color(255, 28, 28));
-        Error.setBounds(277, 179, 298, 46);
+        Error.setBounds(293, 185, 269, 45);
         contentPane.add(Error);
+
+        Name_Student = new JTextField();
+        Name_Student.setBounds(304, 254, 227, 20);
+        contentPane.add(Name_Student);
+        Name_Student.setColumns(10);
+
+        JLabel Name = new JLabel("Name");
+        Name.setFont(new Font("Tahoma", Font.PLAIN, 19));
+        Name.setBounds(207, 243, 124, 32);
+        contentPane.add(Name);
     }
 
     /**
@@ -84,7 +95,7 @@ public class Log_in extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Log_in frame = new Log_in();
+                    RegisterScreen frame = new RegisterScreen();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -93,32 +104,33 @@ public class Log_in extends JFrame {
         });
     }
 
-    private void log() {
-        String name = textField.getText();
-        String password = passwordField.getText();
-
-        if (name.equals("") || password.equals("")) {
-            Error.setText("Field cannot be empty");
+    private void Registering() {
+        String user = textField.getText();
+        String pwd = passwordField.getText();
+        String name = Name_Student.getText();
+        if (user.equals("") || pwd.equals("") || name.equals("")) {
+            Error.setText("Field Cannot be empty");
             return;
         }
-        Student s;
+        Student S = new Student("", "", "");
         try {
-            s = Student.login(name, password);
+            S = Student.register(name, user, pwd);
         } catch (Exception e) {
+            // TODO Auto-generated catch block
             Error.setText(e.getMessage());
-            e.printStackTrace();
             return;
-        }
 
-        User_Screen sc = new User_Screen(s);
+        }
+        UserScreen sc = new UserScreen(S);
         sc.setVisible(true);
         this.dispose();
 
     }
 
     private void Landing() {
-        Landing_Screen sc = new Landing_Screen();
+        LandingScreen sc = new LandingScreen();
         sc.setVisible(true);
         this.dispose();
     }
+
 }

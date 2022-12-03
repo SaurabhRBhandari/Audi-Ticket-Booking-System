@@ -7,7 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-public class Previous_Bookings extends JFrame {
+public class PreviousBookings extends JFrame {
 
     private final JPanel contentPane;
     private final Student user;
@@ -32,7 +32,7 @@ public class Previous_Bookings extends JFrame {
     /**
      * Create the frame.
      */
-    public Previous_Bookings(Student s) {
+    public PreviousBookings(Student s) {
         user = s;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 540);
@@ -84,7 +84,7 @@ public class Previous_Bookings extends JFrame {
     }
 
     private void Back() {
-        User_Screen sc = new User_Screen(user);
+        UserScreen sc = new UserScreen(user);
         sc.setVisible(true);
         this.dispose();
     }

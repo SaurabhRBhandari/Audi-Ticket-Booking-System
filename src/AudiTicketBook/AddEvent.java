@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Add_Movie extends JFrame {
+public class AddEvent extends JFrame {
 
     private final JPanel contentPane;
     private final JTextField NewName;
@@ -19,7 +19,7 @@ public class Add_Movie extends JFrame {
     /**
      * Create the frame.
      */
-    public Add_Movie() {
+    public AddEvent() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 540);
         contentPane = new JPanel();
@@ -110,7 +110,7 @@ public class Add_Movie extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Add_Movie frame = new Add_Movie();
+                    AddEvent frame = new AddEvent();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -137,7 +137,7 @@ public class Add_Movie extends JFrame {
     }
 
     private void Admin() {
-        Admin_Screen sc = new Admin_Screen();
+        AdminScreen sc = new AdminScreen();
         sc.setVisible(true);
         this.dispose();
     }
