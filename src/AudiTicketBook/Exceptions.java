@@ -23,3 +23,15 @@ class InvalidFileException extends Exception {
         super("File not formatted properly.");
     }
 }
+
+class EmptyFieldException extends Exception {
+    public EmptyFieldException() {
+        super("Field cannot be empty");
+    }
+}
+
+class NoEventSelectedException extends Exception {
+    public NoEventSelectedException() {
+        super("No event selected");
+    }
+}

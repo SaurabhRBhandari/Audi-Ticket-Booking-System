@@ -77,6 +77,7 @@ public class AdminLogIn extends JFrame {
 
         Error = new JLabel("");
         Error.setFont(new Font("Tahoma", Font.BOLD, 17));
+        Error.setForeground(new Color(255, 28, 28));
         Error.setBounds(353, 237, 418, 152);
         contentPane.add(Error);
     }
@@ -100,19 +101,24 @@ public class AdminLogIn extends JFrame {
     private void Log_in() {
         String name = textField.getText();
         String pwd = passwordField.getText();
-        if (name.equals("") || pwd.equals("")) {
-            Error.setText("Field cannot be empty");
-            return;
+        try {
+            if (name.equals("") || pwd.equals("")) {
+                throw new EmptyFieldException();
+            }
+            if (name.equals("admin") && pwd.equals("password")) {
+                Admin ad = new Admin();
+                Thread t = new Thread(ad);
+                t.start();
+                Thread.currentThread().interrupt();
+                this.dispose();
+            } else {
+                throw new WrongPasswordException();
+            }
         }
-        if (name.equals("admin") && pwd.equals("password")) {
-            Admin ad=new Admin();
-            Thread t=new Thread(ad);
-            t.start();
-            Thread.currentThread().interrupt();
-            this.dispose();
-        } else {
-            Error.setText("Username/Password incorrect");
-		}
+        catch (Exception e)
+        {
+            Error.setText(e.getMessage());
+        }
     }
 
     private void back() {

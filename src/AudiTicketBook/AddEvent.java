@@ -95,6 +95,7 @@ public class AddEvent extends JFrame {
 
         Error = new JLabel("");
         Error.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        Error.setForeground(new Color(255, 28, 28));
         Error.setHorizontalAlignment(SwingConstants.CENTER);
         Error.setBounds(251, 412, 358, 67);
         contentPane.add(Error);

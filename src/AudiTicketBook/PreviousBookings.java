@@ -56,7 +56,8 @@ public class PreviousBookings extends JFrame {
             String seats = "";
             for (int j = 0; j < st.size(); j++) {
                 int id = st.get(j).getId();
-                seats = seats + "," + (id / 10 + 1) + "-" + (id % 10 + 1);
+                seats = seats + (id / 10 + 1) + "-" + (id % 10 + 1) ;
+                if(j!=st.size()-1)seats+=",";
             }
             Rows[i][3] = seats;
             if (bookings.get(i).getStatus())

@@ -59,6 +59,9 @@ public class Booking implements Savable {
     }
 
     public static synchronized Booking book(Event e, List<Auditorium.Seat> seats) throws SeatAlreadyBookedException{
+        for (Auditorium.Seat s : seats) {
+            if(s.getIsBooked(e))throw new SeatAlreadyBookedException();
+        }
         Booking b = new Booking(e, seats);
             bookingList.add(b);
             for (Auditorium.Seat s : seats) {

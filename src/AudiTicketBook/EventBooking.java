@@ -18,6 +18,8 @@ public class EventBooking extends JFrame {
     private final Event e;
     private final JLabel lblNewLabel_3;
 
+    private final JLabel Error;
+
     /**
      * Launch the application.
      //	 */
@@ -120,26 +122,38 @@ public class EventBooking extends JFrame {
             contentPane.add(chckbxNewCheckBox);
         }
 
+        Error = new JLabel("");
+        Error.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        Error.setForeground(new Color(255, 28, 28));
+        Error.setHorizontalAlignment(SwingConstants.CENTER);
+        Error.setBounds(488, 425, 276, 53);
+        contentPane.add(Error);
+
 
     }
 
-    private void book() throws InterruptedException,SeatAlreadyBookedException {
-        List<Auditorium.Seat> Selected = new ArrayList<Auditorium.Seat>();
-        int c = 0;
-        for (int i = 0; i < 100; i++) {
-            if (checkbox.get(i).isSelected()) {
-                c++;
-                Selected.add(allseat[i]);
+    private void book()  {
+        try {
+            List<Auditorium.Seat> Selected = new ArrayList<Auditorium.Seat>();
+            int c = 0;
+            for (int i = 0; i < 100; i++) {
+                if (checkbox.get(i).isSelected()) {
+                    c++;
+                    Selected.add(allseat[i]);
+                }
             }
-        }
-        if (c == 0) {
-            lblNewLabel_3.setText("Select a seat");
-            return;
-        }
+            if (c == 0) {
+                lblNewLabel_3.setText("Select a seat");
+                return;
+            }
 
-        user.book(e, Selected);
-
-        lblNewLabel_3.setText("Booking Done");
+            user.book(e, Selected);
+            lblNewLabel_3.setText("Booking Done");
+        }
+        catch (Exception e)
+        {
+            Error.setText(e.getMessage());
+        }
 
     }
 

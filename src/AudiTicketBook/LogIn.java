@@ -96,23 +96,19 @@ public class LogIn extends JFrame {
     private void log() {
         String name = textField.getText();
         String password = passwordField.getText();
-
-        if (name.equals("") || password.equals("")) {
-            Error.setText("Field cannot be empty");
-            return;
-        }
-        Student s;
         try {
+            if (name.equals("") || password.equals("")) throw new EmptyFieldException();
+            Student s;
             s = Student.login(name, password);
-        } catch (Exception e) {
-            Error.setText(e.getMessage());
-            e.printStackTrace();
-            return;
+
+            Thread t = new Thread(s);
+            t.start();
+            Thread.currentThread().interrupt();
+            this.dispose();
         }
-        Thread t=new Thread(s);
-        t.start();
-        Thread.currentThread().interrupt();
-        this.dispose();
+        catch (Exception e) {
+        Error.setText(e.getMessage());
+        }
 
     }
 

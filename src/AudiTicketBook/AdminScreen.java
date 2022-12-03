@@ -93,6 +93,7 @@ public class AdminScreen extends JFrame {
 
         Error = new JLabel("");
         Error.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        Error.setForeground(new Color(255, 28, 28));
         Error.setHorizontalAlignment(SwingConstants.CENTER);
         Error.setBounds(304, 408, 289, 47);
         contentPane.add(Error);
@@ -122,29 +123,36 @@ public class AdminScreen extends JFrame {
     }
 
     private void remove() {
-        int row = table.getSelectedRow();
+        try {
+            int row = table.getSelectedRow();
 
-        if (row == -1) {
-            Error.setText("Select an event");
-            return;
+            if (row == -1) throw new NoEventSelectedException();
+            Admin.removeEvent(ev.get(row));
+
+            AdminScreen sc = new AdminScreen();
+            sc.setVisible(true);
+            this.dispose();
         }
-        Admin.removeEvent(ev.get(row));
-
-        AdminScreen sc = new AdminScreen();
-        sc.setVisible(true);
-        this.dispose();
+        catch (Exception e)
+        {
+            Error.setText(e.getMessage());
+        }
     }
 
     private void changeDetails() {
-        int row = table.getSelectedRow();
+        try {
+            int row = table.getSelectedRow();
 
-        if (row == -1) {
-            Error.setText("Select an event");
-            return;
+            if (row == -1) throw new NoEventSelectedException();
+
+            ChangeDetails Sc = new ChangeDetails(ev.get(row));
+            Sc.setVisible(true);
+            this.dispose();
         }
-        ChangeDetails Sc = new ChangeDetails(ev.get(row));
-        Sc.setVisible(true);
-        this.dispose();
+        catch (Exception e)
+        {
+            Error.setText(e.getMessage());
+        }
     }
 
     private void Landing_Screen() {

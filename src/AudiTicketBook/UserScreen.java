@@ -92,6 +92,7 @@ public class UserScreen extends JFrame {
         Error = new JLabel("");
         Error.setHorizontalAlignment(SwingConstants.CENTER);
         Error.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        Error.setForeground(new Color(255, 28, 28));
         Error.setBounds(327, 412, 238, 52);
         contentPane.add(Error);
 

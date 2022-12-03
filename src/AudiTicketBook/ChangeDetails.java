@@ -126,6 +126,7 @@ public class ChangeDetails extends JFrame {
 
         Error = new JLabel("");
         Error.setFont(new Font("Tahoma", Font.PLAIN, 25));
+        Error.setForeground(new Color(255, 28, 28));
         Error.setHorizontalAlignment(SwingConstants.CENTER);
         Error.setBounds(488, 425, 276, 53);
         contentPane.add(Error);
@@ -150,34 +151,35 @@ public class ChangeDetails extends JFrame {
     }
 
     private void Update_Details() {
-        String name, date, time, price;
-        int pr = 0;
-        name = NewName.getText();
-        date = NewDate.getText();
-        time = NewTime.getText();
-        price = NewPrice.getText();
-        if (name.equals("") && date.equals("") && time.equals("") && price.equals("")) {
-            Error.setText("Field Cannot be Empty");
-            return;
+        try {
+            String name, date, time, price;
+            int pr = 0;
+            name = NewName.getText();
+            date = NewDate.getText();
+            time = NewTime.getText();
+            price = NewPrice.getText();
+            if (name.equals("") && date.equals("") && time.equals("") && price.equals("")) throw new EmptyFieldException();
+            if (name.equals(""))
+                name = ev.getName();
+            if (date.equals(""))
+                date = ev.getDate();
+            if (time.equals(""))
+                time = ev.getTime();
+            if (price.equals("")) {
+                pr = ev.getPrice();
+            } else
+                pr = Integer.parseInt(price);
+
+            Admin.changeDetails(ev, name, date, time, pr);
+
+            ChangeDetails obj = new ChangeDetails(ev);
+            obj.setVisible(true);
+            this.dispose();
         }
-        if (name.equals(""))
-            name = ev.getName();
-        if (date.equals(""))
-            date = ev.getDate();
-        if (time.equals(""))
-            time = ev.getTime();
-        if (price.equals("")) {
-            pr = ev.getPrice();
-        } else
-            pr = Integer.parseInt(price);
-
-
-        Admin.changeDetails(ev, name, date, time, pr);
-
-        ChangeDetails obj = new ChangeDetails(ev);
-        obj.setVisible(true);
-        this.dispose();
-
+        catch (Exception e)
+        {
+            Error.setText(e.getMessage());
+        }
 
     }
 
