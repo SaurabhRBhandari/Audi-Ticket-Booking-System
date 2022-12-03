@@ -120,7 +120,7 @@ public class AdminLogIn extends JFrame {
     }
 
     private void back() {
-        LandingScreen sc = new LandingScreen();
+        Main sc = new Main();
         sc.setVisible(true);
         this.dispose();
     }

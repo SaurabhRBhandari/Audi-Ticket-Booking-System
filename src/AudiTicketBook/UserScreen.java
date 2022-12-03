@@ -137,7 +137,7 @@ public class UserScreen extends JFrame {
     }
 
     private void Landing_Screen() {
-        LandingScreen Screen2 = new LandingScreen();
+        Main Screen2 = new Main();
         Screen2.setVisible(true);
         this.dispose();
     }

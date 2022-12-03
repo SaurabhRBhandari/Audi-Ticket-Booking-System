@@ -131,7 +131,7 @@ public class RegisterScreen extends JFrame {
     }
 
     private void Landing() {
-        LandingScreen sc = new LandingScreen();
+        Main sc = new Main();
         sc.setVisible(true);
         this.dispose();
     }
