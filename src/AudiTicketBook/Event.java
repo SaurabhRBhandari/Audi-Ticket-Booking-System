@@ -27,7 +27,7 @@ public class Event implements Savable {
         return eventList;
     }
 
-    public static synchronized void readFromMemory() throws IOException,InvalidFileException {
+    public static synchronized void readFromMemory() throws IOException, InvalidFileException {
         try {
             eventList = new ArrayList<>();
             FileReader reader = new FileReader("data/EventDetail.txt");
@@ -46,9 +46,7 @@ public class Event implements Savable {
                 eventList.add(e);
             }
             reader.close();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new InvalidFileException();
         }
     }
@@ -71,7 +69,7 @@ public class Event implements Savable {
     }
 
     public void cancel() {
-        synchronized (this){
+        synchronized (this) {
             this.is_cancelled = true;
         }
     }
@@ -89,7 +87,7 @@ public class Event implements Savable {
     }
 
     public void setPrice(int price) {
-        synchronized (this){
+        synchronized (this) {
             this.price = price;
         }
     }
@@ -105,25 +103,25 @@ public class Event implements Savable {
     }
 
     public String getTime() {
-        synchronized (this){
+        synchronized (this) {
             return time;
         }
     }
 
     public String getDate() {
-        synchronized (this){
+        synchronized (this) {
             return date;
         }
     }
 
     public void setDate(String Et) {
-        synchronized (this){
+        synchronized (this) {
             this.date = Et;
         }
     }
 
     public void setSt(String St) {
-        synchronized (this){
+        synchronized (this) {
             this.time = St;
         }
     }

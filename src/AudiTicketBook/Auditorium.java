@@ -41,8 +41,8 @@ public class Auditorium {
     }
 
     public class Seat {
-        Set<Event> is_booked;
         private final int id;
+        Set<Event> is_booked;
 
         public Seat(int i) {
             id = i;
@@ -58,8 +58,8 @@ public class Auditorium {
         }
 
         public void book(Event e) throws SeatAlreadyBookedException {
-            if(getIsBooked(e))throw new SeatAlreadyBookedException();
-            synchronized (this){
+            if (getIsBooked(e)) throw new SeatAlreadyBookedException();
+            synchronized (this) {
                 is_booked.add(e);
             }
         }

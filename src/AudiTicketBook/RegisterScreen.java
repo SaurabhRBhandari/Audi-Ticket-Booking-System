@@ -122,7 +122,7 @@ public class RegisterScreen extends JFrame {
             return;
 
         }
-        Thread t=new Thread(S);
+        Thread t = new Thread(S);
         t.start();
         Thread.currentThread().interrupt();
 

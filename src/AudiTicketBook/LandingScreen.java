@@ -65,7 +65,7 @@ public class LandingScreen extends JFrame {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) throws IOException,InvalidFileException {
+    public static void main(String[] args) throws IOException, InvalidFileException {
 
         Auditorium obj = new Auditorium();
         synchronized (obj) {

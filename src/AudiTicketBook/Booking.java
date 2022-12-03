@@ -39,9 +39,7 @@ public class Booking implements Savable {
                 bookingList.add(b);
             }
             reader.close();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new InvalidFileException();
         }
     }
@@ -58,15 +56,15 @@ public class Booking implements Savable {
         return bookingList;
     }
 
-    public static synchronized Booking book(Event e, List<Auditorium.Seat> seats) throws SeatAlreadyBookedException{
+    public static synchronized Booking book(Event e, List<Auditorium.Seat> seats) throws SeatAlreadyBookedException {
         for (Auditorium.Seat s : seats) {
-            if(s.getIsBooked(e))throw new SeatAlreadyBookedException();
+            if (s.getIsBooked(e)) throw new SeatAlreadyBookedException();
         }
         Booking b = new Booking(e, seats);
-            bookingList.add(b);
-            for (Auditorium.Seat s : seats) {
-                s.book(e);
-            }
+        bookingList.add(b);
+        for (Auditorium.Seat s : seats) {
+            s.book(e);
+        }
         return b;
     }
 

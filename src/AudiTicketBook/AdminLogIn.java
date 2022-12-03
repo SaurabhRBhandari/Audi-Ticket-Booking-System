@@ -114,9 +114,7 @@ public class AdminLogIn extends JFrame {
             } else {
                 throw new WrongPasswordException();
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Error.setText(e.getMessage());
         }
     }

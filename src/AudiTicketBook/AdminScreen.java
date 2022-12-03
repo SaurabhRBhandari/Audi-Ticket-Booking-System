@@ -132,9 +132,7 @@ public class AdminScreen extends JFrame {
             AdminScreen sc = new AdminScreen();
             sc.setVisible(true);
             this.dispose();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Error.setText(e.getMessage());
         }
     }
@@ -148,9 +146,7 @@ public class AdminScreen extends JFrame {
             ChangeDetails Sc = new ChangeDetails(ev.get(row));
             Sc.setVisible(true);
             this.dispose();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Error.setText(e.getMessage());
         }
     }

@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ad752a3-d53d-4d67-b868-dde0809c6c0a" name="Changes" comment="Changed bg color">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/BookingDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/BookingDetail.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/EventDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/EventDetail.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/StudentDetail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/StudentDetail.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/AddEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/AddEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/AdminLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/AdminLogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/AdminScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/AdminScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/ChangeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/ChangeDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/EventBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/EventBooking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/Exceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/Exceptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/LogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/LogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/PreviousBookings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/PreviousBookings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudiTicketBook/UserScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudiTicketBook/UserScreen.java" afterDir="false" />
-    </list>
+    <list default="true" id="4ad752a3-d53d-4d67-b868-dde0809c6c0a" name="Changes" comment="Errors implemented" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670101078124</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Errors implemented">
+      <created>1670103545013</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670103545013</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +145,7 @@
     <MESSAGE value="added multithreading and exceptions" />
     <MESSAGE value="bugs resolved" />
     <MESSAGE value="Changed bg color" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed bg color" />
+    <MESSAGE value="Errors implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Errors implemented" />
   </component>
 </project>

@@ -105,9 +105,8 @@ public class LogIn extends JFrame {
             t.start();
             Thread.currentThread().interrupt();
             this.dispose();
-        }
-        catch (Exception e) {
-        Error.setText(e.getMessage());
+        } catch (Exception e) {
+            Error.setText(e.getMessage());
         }
 
     }

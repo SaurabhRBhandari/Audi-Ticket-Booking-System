@@ -158,7 +158,8 @@ public class ChangeDetails extends JFrame {
             date = NewDate.getText();
             time = NewTime.getText();
             price = NewPrice.getText();
-            if (name.equals("") && date.equals("") && time.equals("") && price.equals("")) throw new EmptyFieldException();
+            if (name.equals("") && date.equals("") && time.equals("") && price.equals(""))
+                throw new EmptyFieldException();
             if (name.equals(""))
                 name = ev.getName();
             if (date.equals(""))
@@ -175,9 +176,7 @@ public class ChangeDetails extends JFrame {
             ChangeDetails obj = new ChangeDetails(ev);
             obj.setVisible(true);
             this.dispose();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Error.setText(e.getMessage());
         }
 

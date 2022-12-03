@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student extends User implements Savable,Runnable {
+public class Student extends User implements Savable, Runnable {
     private static List<Student> studentList;
     private final String name;
     private final List<Booking> bookings;
@@ -40,8 +40,9 @@ public class Student extends User implements Savable,Runnable {
                 studentList.add(s);
             }
             reader.close();
+        } catch (Exception e) {
+            throw new InvalidFileException();
         }
-        catch (Exception e){throw new InvalidFileException();}
 
     }
 

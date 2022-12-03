@@ -132,7 +132,7 @@ public class EventBooking extends JFrame {
 
     }
 
-    private void book()  {
+    private void book() {
         try {
             List<Auditorium.Seat> Selected = new ArrayList<Auditorium.Seat>();
             int c = 0;
@@ -149,9 +149,7 @@ public class EventBooking extends JFrame {
 
             user.book(e, Selected);
             lblNewLabel_3.setText("Booking Done");
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Error.setText(e.getMessage());
         }
 
