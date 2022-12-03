@@ -20,7 +20,7 @@ public class LandingScreen extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 540);
         contentPane = new JPanel();
-        contentPane.setBackground(new Color(27, 153, 139));
+        contentPane.setBackground(new Color(158, 194, 185));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
         setContentPane(contentPane);
@@ -33,7 +33,6 @@ public class LandingScreen extends JFrame {
                 Log_Screen(e);
             }
         });
-        btnNewButton.setBackground(new Color(255, 255, 255));
         btnNewButton.setBounds(173, 350, 107, 23);
         contentPane.add(btnNewButton);
 
@@ -44,7 +43,6 @@ public class LandingScreen extends JFrame {
                 Admin_Screen(e);
             }
         });
-        btnNewButton_1.setBackground(new Color(255, 255, 255));
         btnNewButton_1.setBounds(383, 428, 107, 23);
         contentPane.add(btnNewButton_1);
 

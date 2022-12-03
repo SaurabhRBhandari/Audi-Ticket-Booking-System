@@ -20,7 +20,7 @@ public class AdminLogIn extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 540);
         contentPane = new JPanel();
-        contentPane.setBackground(new Color(27, 153, 139));
+        contentPane.setBackground(new Color(158, 194, 185));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
         setContentPane(contentPane);
