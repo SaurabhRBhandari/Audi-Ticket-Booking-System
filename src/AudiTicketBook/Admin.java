@@ -1,12 +1,9 @@
 package AudiTicketBook;
 
 public class Admin extends User implements Runnable {
-    Thread t;
 
-    public Admin(String p, String n) {
-        super(p, n);
-        t = new Thread(this);
-        t.start();
+    public Admin() {
+        super("admin", "password");
     }
 
     public static void addEvent(String name, String date, String time, int price) {
@@ -25,6 +22,8 @@ public class Admin extends User implements Runnable {
     }
 
     public void run() {
+        AdminScreen sc = new AdminScreen();
+        sc.setVisible(true);
     }
 
 }

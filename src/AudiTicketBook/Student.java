@@ -104,6 +104,7 @@ public class Student extends User implements Savable,Runnable {
 
     @Override
     public void run() {
-
+        UserScreen sc = new UserScreen(this);
+        sc.setVisible(true);
     }
 }

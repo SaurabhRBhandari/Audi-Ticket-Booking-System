@@ -105,11 +105,10 @@ public class AdminLogIn extends JFrame {
             return;
         }
         if (name.equals("admin") && pwd.equals("password")) {
-            Thread t=new Thread();
+            Admin ad=new Admin();
+            Thread t=new Thread(ad);
             t.start();
             Thread.currentThread().interrupt();
-            AdminScreen sc = new AdminScreen();
-            sc.setVisible(true);
             this.dispose();
         } else {
             Error.setText("Username/Password incorrect");
