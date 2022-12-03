@@ -35,20 +35,25 @@ public class Event implements Savable {
 
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                String[] arr = line.split("\\$");
-                String name = arr[0];
-                String time = arr[1];
-                String date = arr[2];
-                int price = Integer.parseInt(arr[3]);
-                boolean is_cancelled = arr[4].equals("1");
-                Event e = new Event(name, time, date, price);
-                if (is_cancelled) e.cancel();
+                Event e = getEvent(line);
                 eventList.add(e);
             }
             reader.close();
         } catch (Exception e) {
             throw new InvalidFileException();
         }
+    }
+
+    private static Event getEvent(String line) {
+        String[] arr = line.split("\\$");
+        String name = arr[0];
+        String time = arr[1];
+        String date = arr[2];
+        int price = Integer.parseInt(arr[3]);
+        boolean is_cancelled = arr[4].equals("1");
+        Event e = new Event(name, time, date, price);
+        if (is_cancelled) e.cancel();
+        return e;
     }
 
     public static synchronized void writeToMemory() throws IOException {

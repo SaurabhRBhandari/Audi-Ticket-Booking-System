@@ -26,17 +26,7 @@ public class Student extends User implements Savable, Runnable {
 
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                String[] arr = line.split("\\$");
-                String name = arr[0];
-                String userId = arr[1];
-                String password = arr[2];
-                List<Auditorium.Seat> seats = new ArrayList<>();
-                Student s = new Student(name, password, userId);
-                for (int i = 3; i < arr.length; i++) {
-                    int bookingid = Integer.parseInt(arr[i]);
-                    Booking b = Booking.getAllInstances().get(bookingid);
-                    s.bookings.add(b);
-                }
+                Student s = getStudent(line);
                 studentList.add(s);
             }
             reader.close();
@@ -44,6 +34,21 @@ public class Student extends User implements Savable, Runnable {
             throw new InvalidFileException();
         }
 
+    }
+
+    private static Student getStudent(String line) {
+        String[] arr = line.split("\\$");
+        String name = arr[0];
+        String userId = arr[1];
+        String password = arr[2];
+        List<Auditorium.Seat> seats = new ArrayList<>();
+        Student s = new Student(name, password, userId);
+        for (int i = 3; i < arr.length; i++) {
+            int bookingid = Integer.parseInt(arr[i]);
+            Booking b = Booking.getAllInstances().get(bookingid);
+            s.bookings.add(b);
+        }
+        return s;
     }
 
     public static void writeToMemory() throws IOException {

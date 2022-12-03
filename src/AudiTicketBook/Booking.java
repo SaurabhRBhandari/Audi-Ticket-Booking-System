@@ -25,23 +25,28 @@ public class Booking implements Savable {
 
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                String[] arr = line.split("\\$");
-                int event_id = Integer.parseInt(arr[0]);
-                Event e = Event.getAllInstances().get(event_id);
-                List<Auditorium.Seat> seats = new ArrayList<>();
-                for (int i = 1; i < arr.length; i++) {
-                    int seatid = Integer.parseInt(arr[i]);
-                    Auditorium.Seat s = Auditorium.getMatrix()[seatid];
-                    s.book(e);
-                    seats.add(s);
-                }
-                Booking b = new Booking(e, seats);
+                Booking b = getBooking(line);
                 bookingList.add(b);
             }
             reader.close();
         } catch (Exception e) {
             throw new InvalidFileException();
         }
+    }
+
+    private static Booking getBooking(String line) throws SeatAlreadyBookedException {
+        String[] arr = line.split("\\$");
+        int event_id = Integer.parseInt(arr[0]);
+        Event e = Event.getAllInstances().get(event_id);
+        List<Auditorium.Seat> seats = new ArrayList<>();
+        for (int i = 1; i < arr.length; i++) {
+            int seatid = Integer.parseInt(arr[i]);
+            Auditorium.Seat s = Auditorium.getMatrix()[seatid];
+            s.book(e);
+            seats.add(s);
+        }
+        Booking b = new Booking(e, seats);
+        return b;
     }
 
     public static synchronized void writeToMemory() throws IOException {

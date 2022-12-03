@@ -37,7 +37,7 @@ public class RegisterScreen extends JFrame {
         contentPane.add(textField);
         textField.setColumns(10);
 
-        JLabel lblNewLabel_1 = new JLabel("Username");
+        JLabel lblNewLabel_1 = new JLabel("BITS ID");
         lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 19));
         lblNewLabel_1.setBounds(207, 292, 124, 32);
         contentPane.add(lblNewLabel_1);
