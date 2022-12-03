@@ -27,34 +27,40 @@ public class Event implements Savable {
         return eventList;
     }
 
-    public static void readFromMemory() throws IOException {
-        eventList = new ArrayList<>();
-        FileReader reader = new FileReader("data/EventDetail.txt");
-        BufferedReader bufferedReader = new BufferedReader(reader);
+    public static synchronized void readFromMemory() throws IOException,InvalidFileException {
+        try {
+            eventList = new ArrayList<>();
+            FileReader reader = new FileReader("data/EventDetail.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
 
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] arr = line.split("\\$");
-            String name = arr[0];
-            String time = arr[1];
-            String date = arr[2];
-            int price = Integer.parseInt(arr[3]);
-            boolean is_cancelled = arr[4].equals("1");
-            Event e = new Event(name, time, date, price);
-            if (is_cancelled) e.cancel();
-            eventList.add(e);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] arr = line.split("\\$");
+                String name = arr[0];
+                String time = arr[1];
+                String date = arr[2];
+                int price = Integer.parseInt(arr[3]);
+                boolean is_cancelled = arr[4].equals("1");
+                Event e = new Event(name, time, date, price);
+                if (is_cancelled) e.cancel();
+                eventList.add(e);
+            }
+            reader.close();
         }
-        reader.close();
+        catch (Exception e)
+        {
+            throw new InvalidFileException();
+        }
     }
 
-    public static void writeToMemory() throws IOException {
+    public static synchronized void writeToMemory() throws IOException {
         FileWriter writer = new FileWriter("data/EventDetail.txt", false);
         for (Event e : eventList)
             writer.write(e.toString());
         writer.close();
     }
 
-    public static Event newInstance(String name, String time, String date, int price) {
+    public static synchronized Event newInstance(String name, String time, String date, int price) {
         Event e = new Event(name, time, date, price);
         eventList.add(e);
         return e;
@@ -65,7 +71,9 @@ public class Event implements Savable {
     }
 
     public void cancel() {
-        this.is_cancelled = true;
+        synchronized (this){
+            this.is_cancelled = true;
+        }
     }
 
     @Override
@@ -81,7 +89,9 @@ public class Event implements Savable {
     }
 
     public void setPrice(int price) {
-        this.price = price;
+        synchronized (this){
+            this.price = price;
+        }
     }
 
     public String getName() {
@@ -89,24 +99,33 @@ public class Event implements Savable {
     }
 
     public void setName(String name) {
-        this.name = name;
+        synchronized (this) {
+            this.name = name;
+        }
     }
 
     public String getTime() {
-        return time;
+        synchronized (this){
+            return time;
+        }
     }
 
     public String getDate() {
-        return date;
+        synchronized (this){
+            return date;
+        }
     }
 
     public void setDate(String Et) {
-        this.date = Et;
+        synchronized (this){
+            this.date = Et;
+        }
     }
 
     public void setSt(String St) {
-        this.time = St;
+        synchronized (this){
+            this.time = St;
+        }
     }
 
-    // setPrice()
 }

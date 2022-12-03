@@ -57,8 +57,11 @@ public class Auditorium {
             return id;
         }
 
-        public void book(Event e) {
-            is_booked.add(e);
+        public void book(Event e) throws SeatAlreadyBookedException {
+            if(getIsBooked(e))throw new SeatAlreadyBookedException();
+            synchronized (this){
+                is_booked.add(e);
+            }
         }
     }
 

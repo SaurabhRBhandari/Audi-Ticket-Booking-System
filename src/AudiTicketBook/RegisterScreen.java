@@ -117,10 +117,14 @@ public class RegisterScreen extends JFrame {
             S = Student.register(name, user, pwd);
         } catch (Exception e) {
             // TODO Auto-generated catch block
+            System.out.println(e.getMessage());
             Error.setText(e.getMessage());
             return;
 
         }
+        Thread t=new Thread(S);
+        t.start();
+        Thread.currentThread().interrupt();
         UserScreen sc = new UserScreen(S);
         sc.setVisible(true);
         this.dispose();

@@ -1,10 +1,11 @@
 package AudiTicketBook;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
 public interface Savable {
-    static void readFromMemory() throws IOException {
+    static void readFromMemory() throws IOException, InvalidFileException {
 
     }
 

@@ -67,12 +67,14 @@ public class LandingScreen extends JFrame {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException,InvalidFileException {
 
         Auditorium obj = new Auditorium();
-        Event.readFromMemory();
-        Booking.readFromMemory();
-        Student.readFromMemory();
+        synchronized (obj) {
+            Event.readFromMemory();
+            Booking.readFromMemory();
+            Student.readFromMemory();
+        }
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -86,9 +88,11 @@ public class LandingScreen extends JFrame {
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             public void run() {
                 try {
-                    Student.writeToMemory();
-                    Booking.writeToMemory();
-                    Event.writeToMemory();
+                    synchronized (obj) {
+                        Student.writeToMemory();
+                        Booking.writeToMemory();
+                        Event.writeToMemory();
+                    }
                     System.out.println("Data Saved Successfully");
                 } catch (Exception e) {
                     System.out.println("Could not save data");

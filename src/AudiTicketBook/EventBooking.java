@@ -92,7 +92,7 @@ public class EventBooking extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 try {
                     book();
-                } catch (InterruptedException e1) {
+                } catch (Exception e1) {
                     // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
@@ -123,7 +123,7 @@ public class EventBooking extends JFrame {
 
     }
 
-    private void book() throws InterruptedException {
+    private void book() throws InterruptedException,SeatAlreadyBookedException {
         List<Auditorium.Seat> Selected = new ArrayList<Auditorium.Seat>();
         int c = 0;
         for (int i = 0; i < 100; i++) {
@@ -140,11 +140,6 @@ public class EventBooking extends JFrame {
         user.book(e, Selected);
 
         lblNewLabel_3.setText("Booking Done");
-//		Thread.sleep(3000);
-//				User_Screen sc=new User_Screen(user);
-//		sc.setVisible(true);	
-//		this.dispose();
-
 
     }
 

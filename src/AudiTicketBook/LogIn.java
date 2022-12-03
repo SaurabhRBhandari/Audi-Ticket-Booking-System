@@ -109,7 +109,9 @@ public class LogIn extends JFrame {
             e.printStackTrace();
             return;
         }
-
+        Thread t=new Thread(s);
+        t.start();
+        Thread.currentThread().interrupt();
         UserScreen sc = new UserScreen(s);
         sc.setVisible(true);
         this.dispose();

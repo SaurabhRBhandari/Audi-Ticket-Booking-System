@@ -16,9 +16,6 @@ public class AddEvent extends JFrame {
     private final JLabel Eventadd;
     private final JLabel Error;
 
-    /**
-     * Create the frame.
-     */
     public AddEvent() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 900, 540);

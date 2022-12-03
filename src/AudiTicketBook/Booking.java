@@ -11,37 +11,42 @@ public class Booking implements Savable {
     private static List<Booking> bookingList;
     private final Event e;
     private final List<Auditorium.Seat> seats;
-    private boolean isCancelled;
 
     public Booking(Event e, List<Auditorium.Seat> seats) {
         this.e = e;
         this.seats = seats;
     }
 
-    public static void readFromMemory() throws IOException {
-        bookingList = new ArrayList<>();
-        FileReader reader = new FileReader("data/BookingDetail.txt");
-        BufferedReader bufferedReader = new BufferedReader(reader);
+    public static synchronized void readFromMemory() throws InvalidFileException {
+        try {
+            bookingList = new ArrayList<>();
+            FileReader reader = new FileReader("data/BookingDetail.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
 
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] arr = line.split("\\$");
-            int event_id = Integer.parseInt(arr[0]);
-            Event e = Event.getAllInstances().get(event_id);
-            List<Auditorium.Seat> seats = new ArrayList<>();
-            for (int i = 1; i < arr.length; i++) {
-                int seatid = Integer.parseInt(arr[i]);
-                Auditorium.Seat s = Auditorium.getMatrix()[seatid];
-                s.book(e);
-                seats.add(s);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] arr = line.split("\\$");
+                int event_id = Integer.parseInt(arr[0]);
+                Event e = Event.getAllInstances().get(event_id);
+                List<Auditorium.Seat> seats = new ArrayList<>();
+                for (int i = 1; i < arr.length; i++) {
+                    int seatid = Integer.parseInt(arr[i]);
+                    Auditorium.Seat s = Auditorium.getMatrix()[seatid];
+                    s.book(e);
+                    seats.add(s);
+                }
+                Booking b = new Booking(e, seats);
+                bookingList.add(b);
             }
-            Booking b = new Booking(e, seats);
-            bookingList.add(b);
+            reader.close();
         }
-        reader.close();
+        catch (Exception e)
+        {
+            throw new InvalidFileException();
+        }
     }
 
-    public static void writeToMemory() throws IOException {
+    public static synchronized void writeToMemory() throws IOException {
         FileWriter writer = new FileWriter("data/BookingDetail.txt", false);
         for (Booking b : bookingList) {
             writer.write(b.toString());
@@ -53,12 +58,12 @@ public class Booking implements Savable {
         return bookingList;
     }
 
-    public static Booking book(Event e, List<Auditorium.Seat> seats) {
+    public static synchronized Booking book(Event e, List<Auditorium.Seat> seats) throws SeatAlreadyBookedException{
         Booking b = new Booking(e, seats);
-        bookingList.add(b);
-        for (Auditorium.Seat s : seats) {
-            s.book(e);
-        }
+            bookingList.add(b);
+            for (Auditorium.Seat s : seats) {
+                s.book(e);
+            }
         return b;
     }
 
@@ -66,9 +71,6 @@ public class Booking implements Savable {
         return e.getStatus();
     }
 
-    public void cancel() {
-        isCancelled = false;
-    }
 
     public Event getEvent() {
         return this.e;

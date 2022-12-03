@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student extends User implements Savable {
+public class Student extends User implements Savable,Runnable {
     private static List<Student> studentList;
     private final String name;
     private final List<Booking> bookings;
@@ -18,27 +18,31 @@ public class Student extends User implements Savable {
         this.bookings = new ArrayList<>();
     }
 
-    public static void readFromMemory() throws IOException {
-        studentList = new ArrayList<>();
-        FileReader reader = new FileReader("data/StudentDetail.txt");
-        BufferedReader bufferedReader = new BufferedReader(reader);
+    public static void readFromMemory() throws InvalidFileException {
+        try {
+            studentList = new ArrayList<>();
+            FileReader reader = new FileReader("data/StudentDetail.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
 
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] arr = line.split("\\$");
-            String name = arr[0];
-            String userId = arr[1];
-            String password = arr[2];
-            List<Auditorium.Seat> seats = new ArrayList<>();
-            Student s = new Student(name, password, userId);
-            for (int i = 3; i < arr.length; i++) {
-                int bookingid = Integer.parseInt(arr[i]);
-                Booking b = Booking.getAllInstances().get(bookingid);
-                s.bookings.add(b);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] arr = line.split("\\$");
+                String name = arr[0];
+                String userId = arr[1];
+                String password = arr[2];
+                List<Auditorium.Seat> seats = new ArrayList<>();
+                Student s = new Student(name, password, userId);
+                for (int i = 3; i < arr.length; i++) {
+                    int bookingid = Integer.parseInt(arr[i]);
+                    Booking b = Booking.getAllInstances().get(bookingid);
+                    s.bookings.add(b);
+                }
+                studentList.add(s);
             }
-            studentList.add(s);
+            reader.close();
         }
-        reader.close();
+        catch (Exception e){throw new InvalidFileException();}
+
     }
 
     public static void writeToMemory() throws IOException {
@@ -53,20 +57,20 @@ public class Student extends User implements Savable {
         return new Student(n, p, id);
     }
 
-    public static Student login(String u, String p) throws IOException {
+    public static Student login(String u, String p) throws WrongPasswordException {
         for (Student s : studentList) {
             if (s.userid.equals(u) && s.password.equals(p)) {
                 return s;
             }
         }
-        throw new RuntimeException("Wrong username/password");
+        throw new WrongPasswordException();
     }
 
-    public static Student register(String name, String id, String pass) throws IOException {
+    public static Student register(String name, String id, String pass) throws UserExistsException {
         Student s = new Student(name, pass, id);
         for (Student s1 : studentList) {
             if (s1.userid.equals(id)) {
-                throw new RuntimeException("User Exists");
+                throw new UserExistsException();
             }
         }
         studentList.add(s);
@@ -77,12 +81,8 @@ public class Student extends User implements Savable {
         return bookings;
     }
 
-    public void book(Event E, List<Auditorium.Seat> seats) {
-        try {
-            bookings.add(Booking.book(E, seats));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+    public void book(Event E, List<Auditorium.Seat> seats) throws SeatAlreadyBookedException {
+        bookings.add(Booking.book(E, seats));
     }
 
     public int getExpense() {
@@ -100,5 +100,10 @@ public class Student extends User implements Savable {
             bookingList += "$" + Booking.getAllInstances().indexOf(b);
         }
         return name + "$" + userid + "$" + password + bookingList + "\n";
+    }
+
+    @Override
+    public void run() {
+
     }
 }

@@ -16,18 +16,6 @@ public class PreviousBookings extends JFrame {
     /**
      * Launch the application.
      */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					Previous_Bookings frame = new Previous_Bookings();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
     /**
      * Create the frame.
