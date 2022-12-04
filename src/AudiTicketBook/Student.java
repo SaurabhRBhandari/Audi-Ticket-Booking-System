@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student extends User implements Savable, Runnable {
+public class Student extends User implements Savable<Student>, Runnable {
     private static List<Student> studentList;
     private final String name;
     private final List<Booking> bookings;
@@ -54,7 +54,7 @@ public class Student extends User implements Savable, Runnable {
     public static void writeToMemory() throws IOException {
         FileWriter writer = new FileWriter("data/StudentDetail.txt", false);
         for (Student s : studentList) {
-            writer.write(s.toString());
+            writer.write(s.encode());
         }
         writer.close();
     }
@@ -100,7 +100,7 @@ public class Student extends User implements Savable, Runnable {
     }
 
     @Override
-    public String toString() {
+    public String encode() {
         String bookingList = "";
         for (Booking b : bookings) {
             bookingList += "$" + Booking.getAllInstances().indexOf(b);

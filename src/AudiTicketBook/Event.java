@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Event implements Savable {
+public class Event implements Savable<Event> {
     private static List<Event> eventList;
     private String name;
     private String time;
@@ -59,7 +59,7 @@ public class Event implements Savable {
     public static synchronized void writeToMemory() throws IOException {
         FileWriter writer = new FileWriter("data/EventDetail.txt", false);
         for (Event e : eventList)
-            writer.write(e.toString());
+            writer.write(e.encode());
         writer.close();
     }
 
@@ -79,8 +79,7 @@ public class Event implements Savable {
         }
     }
 
-    @Override
-    public String toString() {
+    public String encode() {
         String tmp;
         if (is_cancelled) tmp = "1";
         else tmp = "0";

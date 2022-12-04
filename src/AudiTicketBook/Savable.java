@@ -3,7 +3,7 @@ package AudiTicketBook;
 import java.io.IOException;
 import java.util.List;
 
-public interface Savable {
+public interface Savable<T>{
     static void readFromMemory() throws IOException, InvalidFileException {
 
     }
@@ -15,4 +15,6 @@ public interface Savable {
     static List<Object> getAllInstances() {
         return null;
     }
+
+    String encode();
 }

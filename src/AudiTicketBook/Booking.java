@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Booking implements Savable {
+public class Booking implements Savable<Booking> {
     private static List<Booking> bookingList;
     private final Event e;
     private final List<Auditorium.Seat> seats;
@@ -52,7 +52,7 @@ public class Booking implements Savable {
     public static synchronized void writeToMemory() throws IOException {
         FileWriter writer = new FileWriter("data/BookingDetail.txt", false);
         for (Booking b : bookingList) {
-            writer.write(b.toString());
+            writer.write(b.encode());
         }
         writer.close();
     }
@@ -87,7 +87,7 @@ public class Booking implements Savable {
     }
 
     @Override
-    public String toString() {
+    public String encode() {
         String seatList = "";
         for (Auditorium.Seat s : seats) {
             seatList += "$" + s.getId();
